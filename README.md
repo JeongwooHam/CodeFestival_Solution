@@ -1,1 +1,1 @@
-# CodeFestival_Solution
+# CodeFestival_Solutions
