@@ -19,7 +19,7 @@ function mergeSort(arr) {
     return arr;
   }
 
-  // 길이를 2로 나눠서 소수점 이하 반올림 > 절반으로 자를 기준 구해줌
+  // 길이를 2로 나눠서 소수점 이하 버림 > 절반으로 자를 기준 구해줌
   const mid = Math.floor(arr.length / 2);
 
   // 정렬되지 않은 리스트를 절반으로 잘라 비슷한 크기의 두 부분 리스트로 나눠줌
