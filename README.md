@@ -1,6 +1,6 @@
 # JS 알고리즘 문제풀이
 
-### CodeFestival_Solutions
+### 1. CodeFestival_Solutions
 
 https://paullab.co.kr/codefestival.html
 
