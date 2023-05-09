@@ -6,5 +6,6 @@ function solution(n) {
   return n.toString();
 }
 
+// 오답
 // 아래가 계속 number로 찍히던 것은 소괄호로 한 번 감싸주지 않았기 때문이었음
 console.log(typeof (123 + ""));
