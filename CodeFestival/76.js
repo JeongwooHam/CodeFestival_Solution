@@ -83,11 +83,23 @@ let count = 0;
   ["0 0 1 0 0"],
 ]
 
-0 1 2
-0 1 2 / 1 2 3 / 2 3 4
+i: 0 
+j: 0        1       2
+k: 0 1 2    0 1 2   0 1 2
+
+0 1 2                           i + j
+0 1 2 / 1 2 3 / 2 3 4           i + j + k
+------------------------------
+i: 1 
+j: 0        1       2
+k: 0 1 2    0 1 2   0 1 2
 
 1 2 3
 0 1 2 / 1 2 3 / 2 3 4
+------------------------------
+i: 2
+j: 0        1       2
+k: 0 1 2    0 1 2   0 1 2
 
 2 3 4
 0 1 2 / 1 2 3 / 2 3 4
@@ -95,15 +107,28 @@ let count = 0;
 
 let newArr = [];
 let targetArr = [];
+let result = 0;
 
-for (let i = 0; i <= sizeOfCity - searchArea; i++) {
-  for (let j = 0; j <= sizeOfCity - searchArea; j++) {
-    console.log(bombsArr[j + i]);
-    newArr.push(bombsArr[j + i]);
+/*
+i 0                                                                       1                                                                       2
+j 0                       1                       2                       0                       1                       2                       0                       1                       2
+k 0       1       2       0       1       2       0       1       2       0       1       2       0       1       2       0       1       2       0       1       2       0       1       2       0       1       2
+x 0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   0 1 2   
+*/
+
+for (let i = 0; i <= sizeOfCity - targetArr; i++) {
+  for (let j = 0; j <= sizeOfCity - targetArr; j++) {
+    for (let k = 0; k <= sizeOfCity - targetArr; k++) {
+      for (let x = 0; x <= sizeOfCity - targetArr; x++) {
+        console.log(x);
+        console.log("=============");
+      }
+      console.log("=============");
+    }
+    console.log("=============");
   }
-  console.log("-------------------");
-  console.log("newArr: ", newArr);
-  console.log("-------------------");
-  newArr = [];
-  targetArr = [];
+  console.log("=============");
 }
+
+// console.log(bombsArr);
+// console.log(newArr);
