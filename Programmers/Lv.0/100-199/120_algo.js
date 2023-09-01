@@ -38,32 +38,31 @@ case2: 1081
 */
 
 const solution = (chicken) => {
+  // 발급 쿠폰의 개수
   let coupon = chicken;
-  let service = 0;
+  // 서비스 쿠폰의 개수
   let result = 0;
-  let rem = 0;
 
   while (coupon >= 10) {
-    service = Math.floor(coupon / 10);
+    // 서비스: 쿠폰 10개가 모인 경우
+    const service = Math.floor(coupon / 10);
+    // 서비스 쿠폰에 추가하기
     result += service;
-    rem += coupon % 10;
-    coupon = service;
+    // 쿠폰 = 서비스 개수 + 잔여 쿠폰
+    coupon = service + (coupon % 10);
   }
-
-  if (rem + coupon > 10) {
-    result += Math.floor((rem + coupon) / 10);
-    const NewRem = (rem + coupon) % 10;
-    coupon = Math.floor((rem + coupon) / 10);
-    rem = NewRem;
-  }
-
-  rem = Math.floor((rem + coupon) / 10);
-
-  return result + rem;
+  // 지금까지 사용한 서비스 개수 + 남은 쿠폰에 대한 서비스
+  return result + Math.floor(coupon / 10);
 };
 
 console.log(solution(100));
 console.log(solution(1081));
 console.log(solution(1999));
 
-// 엄청 간단한 풀이들이 있었는데,, 이해가 안 된다🥲
+// 엄청 간단한 풀이가 있는데,, 이해가 안 된다🥲
+/*
+function solution(chicken) {
+    var answer = parseInt((chicken-1) / 9);
+    return answer;
+}
+*/
