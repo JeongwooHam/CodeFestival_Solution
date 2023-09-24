@@ -16,6 +16,10 @@ array의 길이는 1 이상 100 이하입니다.
 array의 각 원소는 1 이상 100 이하입니다.
 commands의 길이는 1 이상 50 이하입니다.
 commands의 각 원소는 길이가 3입니다.
+
+[어떻게 풀 수 있을까?]
+i번째부터 j번째까지 slice (인덱스니까 i-1)
+정렬 후 k번째 수로 com 배열의 각 요소 map (인덱스니까 k-1)
 */
 
 const solution = (arr, com) =>
