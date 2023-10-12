@@ -14,7 +14,6 @@ const solution = (arr, q) => {
       if (i >= s && i <= e) return el + 1;
       return el;
     });
-    console.log("res", result);
   }
   return result;
 };
