@@ -26,8 +26,8 @@ function solution(s) {
 
   for (let x of s) {
     // x라는 키 값이 존재하는지 확인
-    if (sH.has(x)) sH.set(x, sH.get(x) + 1);
-    else sH.set(x, 1);
+    if (sH.has(x)) sH.set(x, sH.get(x) + 1); // 키 값이 있다면 1 더하기
+    else sH.set(x, 1); // 키 값이 없다면 1부터 시작하기
   }
 
   // 최대값 구하기
