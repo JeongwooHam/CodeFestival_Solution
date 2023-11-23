@@ -31,7 +31,7 @@ console.log(mine("(()(()))(()"));
 const solution = (bracket) => {
   let answer = "YES";
   const stack = [];
-  for (let x of s) {
+  for (let x of bracket) {
     if (x === "(") stack.push(x);
     else {
       if (!stack.length) return "NO"; // 닫는 괄호가 더 많은 경우

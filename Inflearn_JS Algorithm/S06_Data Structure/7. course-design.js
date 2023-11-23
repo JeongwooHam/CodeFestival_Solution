@@ -16,9 +16,26 @@ C, G, E, A, D, B 순서로 짰다면 잘못 설계된 수업계획이 된다.
 
 /*
 🥸 예상 풀이법
+1. queue 배열을 만든다.
+2. cur에 for문을 돌리면서 order.includes(x)면 queue에 담는다.
+3. queue의 길이가 order.length와 같아졌을 때 join한 결과가 order와 같으면 YES, 아니면 NO
+> 전체를 다 도는게 불필요한 것 같다.
 
+🚩 해답
+- queue에 order 담아놓고
+- includes(x)가 참일 때 queue[0]이랑 같은 값이 아니면 바로 return 'NO' 해버리기
 */
 
-const solution = (order, cur) => {};
+const solution = (order, cur) => {
+  const queue = order.split("");
+  for (let x of plan) {
+    if (queue.includes(x)) {
+      if (x !== queue.shift()) return "NO";
+    }
+  }
+  // 필수과목을 빼먹은 경우
+  if (queue.length > 0) return "NO";
+  return "YES";
+};
 
 console.log(solution("CBA", "CBDAGE"));

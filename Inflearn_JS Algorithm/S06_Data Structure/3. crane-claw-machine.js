@@ -21,10 +21,35 @@
 
 /*
 🥸 예상 풀이법
-
+1. for문으로 moves를 돈다.
+2. moves 각 요소에 해당하는 값을 찾기 위해 board를 for문으로 돈다. (열 고정)
+   1) 돌면서 0이 아닌 값을 stack에 넣고, 해당 값은 0으로 바꾼다.
+   2) 모두 0인 경우 아무것도 담지 않고 해당 턴을 끝낸다.
+3. push하기 전 이전 값을 검사해 둘이 같으면 push하는 대신 pop한다. 이때 answer+=2 (두 개!!)
 */
 
-const solution = (board, moves) => {};
+const solution = (board, moves) => {
+  let answer = 0;
+  let stack = [];
+  moves.forEach((pos) => {
+    for (let i = 0; i < board.length; i++) {
+      // 0이 아닌 값 찾기
+      if (board[i][pos - 1] !== 0) {
+        let tmp = board[i][pos - 1];
+        board[i][pos - 1] = 0;
+        // 꺼낸 인형이 stack 상단의 값과 같은지 비교
+        if (tmp === stack[stack.length - 1]) {
+          stack.pop();
+          answer += 2;
+        } else stack.push(tmp);
+        // 💡 한 번 찾으면 더 이상 탐색하지 않도록 for문을 멈춰주어야 함!!
+        break;
+      }
+    }
+  });
+
+  return answer;
+};
 
 console.log(
   solution(

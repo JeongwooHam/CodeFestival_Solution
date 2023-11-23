@@ -24,10 +24,40 @@
 
 /*
 🥸 예상 풀이법
+1. (, )가 하나 등장할 때마다 stack에 push 한다.
+2. target 값이 )이고, 만약 stack.length-1이 (여서 인접한 쌍이 이루어지는 경우 pop한다.
+... 모르겠다
 
+🚩 정답 풀이
+1. 여는 괄호를 만나면 stack에 push
+2. 닫는 괄호를 만나면
+   1) i-1이 여는 괄호라면 레이저
+      a. stack.pop
+      b. answer에 stack.length 누적 (초기화 X, 계속 같은 값 누적)
+   2) i-1이 닫는 괄호라면 막대기의 끝
+      a. stack.pop
+      b. answer에 1 누적
+   > 두 경우 모두 pop
 */
 
-const solution = (str) => {};
+const solution = (str) => {
+  let answer;
+  const stack = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (x === "(") stack.push(s[i]);
+    else {
+      // 닫는 괄호면 무조건 빼주기
+      stack.pop();
+      // razor
+      if (s[i - 1] === "(") answer += stack.length;
+      // 막대기의 끝일 때
+      else answer += 1;
+    }
+  }
+
+  return answer;
+};
 
 console.log(solution("()(((()())(())()))(())")); // 17
 
