@@ -11,10 +11,10 @@
 
 */
 
-const solution = (n, m, q) => {};
+const solution = (m, q) => {};
 
 console.log(
-  solution(5, 20, [
+  solution(20, [
     [10, 6],
     [25, 12],
     [15, 8],

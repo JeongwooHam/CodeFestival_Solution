@@ -11,10 +11,31 @@
 */
 
 /*
-🥸 예상 풀이법
+🚩 해법
+동전의 종류가 많아지거나 거슬러 줄 금액이 커지면 DFS가 아닌 dynamic - 냅색 알고리즘을 사용해야 한다.
 
+🤔 어떻게 작은 단위에서 큰 단위로 확대할 수 있을까?
+- 0이 아닌 큰 숫자로 초기화한다. (1000)
+- dy table의 인덱스 번호: 거슬러 줄 금액
+- dy[i]: i 금액을 거슬러 줄 때 사용된 최소 동전 개수
+- dy[m] 값을 return
+
+1. 동전의 종류 배열에 대해 for 문(i)
+2. 제일 작은 동전 단위로 거슬러주기 위해 필요한 개수
+3. dy[j-coin[i]] + 1
+4. 기존 dy[j] 값보다 3번 값이 작으면 바꿔줌, 기존 값이 더 작으면 그냥 둠
 */
 
-const solution = (n, cate, m) => {};
+const solution = (coin, m) => {
+  let dy = Array.from({ length: m + 1 }, () => 1000);
+  dy[0] = 0;
+  // 동전의 종류만큼 도는 for문
+  for (let i = 0; i < coin.length; i++) {
+    for (let j = coin[i]; j <= m; j++) {
+      dy[j] = Math.min(dy[j], dy[j - coin[i]] + 1);
+    }
+  }
+  return dy[m];
+};
 
-console.log(solution(3, [1, 2, 5], 15));
+console.log(solution([1, 2, 5], 15));
