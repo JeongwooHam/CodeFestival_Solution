@@ -43,6 +43,27 @@ readline
   });
 ```
 
+- 첫 번째 입력값으로 개수가 와서 삭제해줘야 하는 경우
+
+```js
+const line = require("fs").readFileSync("/dev/stdin", "utf8");
+
+let [firstLine, ...input] = line
+  .trim()
+  .split("\n")
+  .map((v) => Number(v));
+```
+
 ```
 🥸 readline 사용이 권장되나 보통 fs 모듈을 사용해도 에러가 나지 않는 경우가 많으므로 골라서 사용하면 될 것 같다.
+```
+
+### ⚠️ <code>console.log</code> 사용 시 주의할 점
+
+- 입력 값의 개수가 <code>N(1 ≤ N ≤ 1,000,000)</code>처럼 큰 경우 for문을 사용하여 <code>console.log</code>로 값을 하나씩 찍으면 **시간 초과** 오류가 발생한다.
+
+- 이때는 아래와 같이 값을 출력하면 된다.
+
+```js
+console.log(result.join("\n"));
 ```
