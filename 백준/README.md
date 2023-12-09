@@ -46,12 +46,11 @@ readline
 - 첫 번째 입력값으로 개수가 와서 삭제해줘야 하는 경우
 
 ```js
-const line = require("fs").readFileSync("/dev/stdin", "utf8");
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split("\n");
 
-let [firstLine, ...input] = line
-  .trim()
-  .split("\n")
-  .map((v) => Number(v));
+const len = input.shift();
+
+// 이 상태로 input 값을 사용하면 된다.
 ```
 
 ```
