@@ -14,3 +14,9 @@ JS 100제 2부
 ### 3. Programmers
 
 - [문제 출처](https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&levels=0&languages=javascript)
+
+### 4. 백준, 프로그래머스
+
+- 문제 풀이 후 [백준 hub](https://chromewebstore.google.com/detail/%EB%B0%B1%EC%A4%80%ED%97%88%EB%B8%8Cbaekjoonhub/ccammcjdkpgjmcpijpahlehmapgmphmk?hl=ko)를 통해 commit
+- [백준](https://solved.ac/problems/level)
+- [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&levels=0&languages=javascript)
