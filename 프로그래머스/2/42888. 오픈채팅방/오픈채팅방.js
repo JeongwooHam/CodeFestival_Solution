@@ -3,16 +3,22 @@ const Command = {
     Leave: "나갔습니다."
 }
 
-function solution(record) {
-    const splitRecord = record.map((rec) => rec.split(" "))
-    const nameMap = new Map()
+const getNameMap = (arr) => {
+      const nameMap = new Map()
 
-    for([_, id, nickname] of splitRecord){
+      for([_, id, nickname] of arr){
        if(!nickname) continue;
        if(nameMap.get(id) !== nickname) nameMap.set(id, nickname)
        else continue;
      }
+        return nameMap
+}
+
+function solution(record) {
+    const splitRecord = record.map((rec) => rec.split(" "))
     
+    const nameMap = getNameMap(splitRecord)
+     
     const result = [];
     for([command, id, nickname] of splitRecord){
        if(!Command[command]) continue;
