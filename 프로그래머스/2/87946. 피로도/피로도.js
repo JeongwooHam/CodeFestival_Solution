@@ -29,10 +29,10 @@ const solution = (k, dungeons) => {
         let sum = 0;
         for(let j = 0; j < dungeons.length; j++){
             const target = perm[i][j]
-            if(fatigue < perm[i][j][0]){
+            if(fatigue < target[0]){
                 continue;
             }else{
-                fatigue -= perm[i][j][1]
+                fatigue -= target[1]
                 sum++
             }
             result = Math.max(sum, result)
