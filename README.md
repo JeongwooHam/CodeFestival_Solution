@@ -12,7 +12,7 @@ JS 100제 2부
 ### 2. Inflearn_JS Algorithm
 
 - [강의 링크](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/dashboard)
-- 알고리즘 관련 프로그래밍 강의를 수강하고 해당 내용을 정리하였따.
+- 알고리즘 관련 프로그래밍 강의를 수강하고 해당 내용을 정리하였다.
 
 ### 3. Programmers
 
@@ -27,6 +27,6 @@ JS 100제 2부
 ### 5. CodeSignal
 
 - [문제 출처](https://app.codesignal.com/arcade/intro)
-- 문제를 풀이하는 부분에 있어서는 프로그래머스와 유사한 형태이나 사이트의 기능 및 문제가 모두 영어로 제공되며🥹 조금 더 게임처럼 생긴 것이 특이사항..!
+- 문제를 풀이하는 부분에 있어서는 프로그래머스와 유사한 형태이나 사이트의 기능 및 문제가 모두 영어로 제공되며 조금 더 게임처럼 생긴 것이 특이사항..!
 
 ![image](https://github.com/JeongwooHam/FE_Study_Logs/assets/123251211/f3292881-1d6f-44a4-9b5c-97b4a17a6e3f)
